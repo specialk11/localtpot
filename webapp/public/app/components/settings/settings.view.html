@@ -1,0 +1,171 @@
+<mdl-text-field label="First Name" ng-model="first_name"></mdl-text-field>
+
+<ul class="mdl-list">
+	<li class="mdl-list__item nobottom">
+	    <span class="mdl-list__item-primary-content">
+	    	<span>
+	    		<b>College</b>
+	    	</span>
+	    </span>
+	</li>
+	<li class="mdl-list__item">
+        <span class="mdl-list__item-primary-content">
+            <form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input mdl-upgrade class="mdl-textfield__input" type="text" id="college" ng-model="college">
+                    <label class="mdl-textfield__label" for="college">Please enter your college...</label>
+                </div>
+            </form>
+        </span>
+    </li>
+    <li class="mdl-list__item">
+        <span class="mdl-list__item-primary-content">
+            <form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="course" ng-model="course">
+                    <label class="mdl-textfield__label" for="course">Please enter your course code...</label>
+                </div>
+            </form>
+        </span>
+    </li>
+    <li class="mdl-list__item">
+        <span class="mdl-list__item-primary-content">
+            <form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="year" ng-model="year">
+                    <label class="mdl-textfield__label" for="year">Please enter your year...</label>
+                </div>
+            </form>
+        </span>
+    </li>
+
+	<li class="mdl-list__item nobottom">
+	    <span class="mdl-list__item-primary-content">
+	    	<span>
+	    		<b>Calendars</b>
+	    	</span>
+	    </span>
+	</li>
+	<li class="mdl-list__item notop">
+	    <span class="mdl-list__item-primary-content">
+	    	<span class="mdl-list__item-text-body">
+				<span ng-repeat="c in calendars">
+					<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-{{ c }}">
+					  	<input type="checkbox" id="checkbox-{{ c }}" class="mdl-checkbox__input" ng-model="c.value">
+					  	<span class="mdl-checkbox__label">{{ c.summary }}</span>
+					</label>
+					<br/>
+				</span>
+	    	</span>
+	    </span>
+	</li>
+
+	<li class="mdl-list__item nobottom">
+	    <span class="mdl-list__item-primary-content">
+	    	<span>
+	    		<b>Modules</b>
+	    	</span>
+	    </span>
+	</li>
+	<li class="mdl-list__item notop">
+	    <span class="mdl-list__item-primary-content">
+	    	<span class="mdl-list__item-text-body">
+	    		<span ng-repeat="m in modules">
+					<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-{{ m }}">
+					  	<input type="checkbox" id="checkbox-{{ m }}" class="mdl-checkbox__input" ng-model="m.value">
+					  	<span class="mdl-checkbox__label">{{ m.module }}</span>
+					</label>
+					<br/>
+				</span>
+	    	</span>
+	    </span>
+	</li>
+
+	<li class="mdl-list__item nobottom">
+	    <span class="mdl-list__item-primary-content">
+	    	<span>
+	    		<b>Societies</b>
+	    	</span>
+	    </span>
+	</li>
+	<li class="mdl-list__item notop">
+	    <span class="mdl-list__item-primary-content">
+	    	<span class="mdl-list__item-text-body">
+	    		<span ng-repeat="s in societies">
+					<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" ng-click="removeSociety(s)">
+			            <i class="material-icons">clear</i>
+			        </button>
+			        {{ s }}
+					<br/>
+				</span>
+	    	</span>
+	    </span>
+	</li>
+	<li class="mdl-list__item notop">
+	    <span class="mdl-list__item-primary-content">
+	    	<span class="mdl-list__item-text-body">
+	    		<a href="/#/settings/addsocieties">
+		            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+		                Subscribe to New Societies
+		            </button>
+		        </a>
+	    	</span>
+	    </span>
+	</li>
+
+	<li class="mdl-list__item nobottom">
+	    <span class="mdl-list__item-primary-content">
+	    	<span>
+	    		<b>Diet</b>
+	    	</span>
+	    </span>
+	</li>
+	<li class="mdl-list__item notop">
+	    <span class="mdl-list__item-primary-content">
+	    	<span class="mdl-list__item-text-body">
+	    		<span ng-repeat="dk in dietkeys">
+					<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-{{ dk }}">
+					  	<input type="checkbox" id="checkbox-{{ dk }}" class="mdl-checkbox__input" ng-model="diet[dk]">
+					  	<span class="mdl-checkbox__label">{{ dk }}</span>
+					</label>
+					<br/>
+				</span>
+	    	</span>
+	    </span>
+	</li>
+
+	<li class="mdl-list__item nobottom">
+	    <span class="mdl-list__item-primary-content">
+	    	<span>
+	    		<b>Intolerances</b>
+	    	</span>
+	    </span>
+	</li>
+	<li class="mdl-list__item notop">
+	    <span class="mdl-list__item-primary-content">
+	    	<span class="mdl-list__item-text-body">
+	    		<span ng-repeat="ik in intoleranceskeys">
+					<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-{{ ik }}">
+					  	<input type="checkbox" id="checkbox-{{ ik }}" class="mdl-checkbox__input" ng-model="intolerances[ik]">
+					  	<span class="mdl-checkbox__label">{{ ik }}</span>
+					</label>
+					<br/>
+				</span>
+	    	</span>
+	    </span>
+	</li>
+	<li class="mdl-list__item notop">
+	    <span class="mdl-list__item-primary-content">
+	    	<span class="mdl-list__item-text-body">
+	    		<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" ng-click="saveSettings()">
+				  	Save Settings
+				</button>
+	    	</span>
+	    </span>
+	</li>
+</ul>
+
+<div id="snackbar" class="mdl-js-snackbar mdl-snackbar">
+  	<div class="mdl-snackbar__text"></div>
+  	<button class="mdl-snackbar__action" type="button"></button>
+</div>

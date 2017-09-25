@@ -1,0 +1,44 @@
+{
+  "name": "tPot",
+  "version": "1.0.0",
+  "description": "student hub app",
+  "main": "index.js",
+  "scripts": {
+    "test": "../node_modules/.bin/mocha test/**",
+    "start": "node server.js"
+  },
+  "author": "Marcin Gardas, Cathal Brophy, Kumaran Keyes, Niall Walsh",
+  "license": "ISC",
+  "dependencies": {
+    "@google/maps": "^0.3.1",
+    "async": "^2.1.5",
+    "asyncjs": "0.0.10",
+    "body-parser": "*",
+    "cheerio": "^0.22.0",
+    "cors": "*",
+    "express": "^4.14.0",
+    "google-auth-library": "^0.9.10",
+    "googleapis": "^14.2.0",
+    "helmet": "^3.5.0",
+    "lodash.noop": "^3.0.1",
+    "mongo": "^0.1.0",
+    "mongodb": "^2.2.31",
+    "node-cron": "^1.1.3",
+    "nodemon": "^1.11.0",
+    "object.values": "^1.0.4",
+    "package.json": "^2.0.1",
+    "uuid": "^3.0.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CPSSD/StudentHub.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CPSSD/StudentHub/issues"
+  },
+  "homepage": "https://github.com/CPSSD/StudentHub/blob/master/readme.md"
+}

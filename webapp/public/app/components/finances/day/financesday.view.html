@@ -1,0 +1,66 @@
+<div class="mdl-grid date">
+	<div class="mdl-cell mdl-cell--1-col date-arrow" ng-click="changeDate(-1)">
+		<div class="mdl-grid center-items">
+			<
+		</div>
+	</div>
+	<div class="mdl-cell mdl-cell--10-col mdl-cell--6-col-tablet mdl-cell--2-col-phone">
+		<div class="mdl-grid center-items">
+			{{ datename }}
+		</div>
+	</div>
+	<div class="mdl-cell mdl-cell--1-col date-arrow" ng-click="changeDate(1)">
+		<div class="mdl-grid center-items">
+			>
+		</div>
+	</div>
+</div>
+
+<div class="mdl-grid" ng-show="isEmpty(items) && isEmptyString(itemsmessage)">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--10-col mdl-typography--text-center">
+        <div class="mdl-spinner mdl-js-spinner is-active"></div>
+    </div>
+    <div class="mdl-layout-spacer"></div>
+</div>
+
+<div class="mdl-grid" ng-hide="isEmptyString(itemsmessage)">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--10-col mdl-typography--text-center">
+        {{ itemsmessage }}
+    </div>
+    <div class="mdl-layout-spacer"></div>
+</div>
+
+<ul class="mdl-list" ng-model="items">
+	<li class="mdl-list__item" ng-repeat="item in items">
+	    <span class="mdl-list__item-primary-content">
+	        {{ item.summary }}
+	    </span>
+	    <span class="mdl-list__item-secondary-action">
+	        &euro;{{ item.amount }}
+	        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" ng-click="removeItem(item)">
+			  	<i class="material-icons">clear</i>
+			</button>
+	    </span>
+	</li>
+</ul>
+
+<div class="mdl-grid">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--4-col mdl-typography--text-center">
+    	<a href="/#/finances/add/{{ day }}/income">
+	    	<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+			  	Add Income
+			</button>
+		</a>
+	</div>
+	<div class="mdl-cell mdl-cell--4-col mdl-typography--text-center">
+		<a href="/#/finances/add/{{ day }}/expenditure">
+	    	<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+			  	Add Expenditure
+			</button>
+		</a>
+    </div>
+    <div class="mdl-layout-spacer"></div>
+</div>

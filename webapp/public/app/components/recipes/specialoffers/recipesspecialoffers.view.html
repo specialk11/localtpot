@@ -1,0 +1,14 @@
+<ul class="demo-list-icon mdl-list" ng-model="specialoffers">
+	<li class="mdl-list__item" ng-repeat="type in specialoffertypes">
+	    <span class="mdl-list__item-primary-content capitalize">
+	    	<b>{{ type }}</b>
+	    </span>
+	    <span class="mdl-list__item-secondary-action">
+	    	<a href="/#/recipes/specialoffers/{{ type }}">
+		    	<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+				  	View Products
+				</button>
+			</a>
+		</span>
+	</li>
+</ul>

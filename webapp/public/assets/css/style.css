@@ -1,0 +1,70 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+.mdl-layout__tab-bar-container {
+	height: inherit !important;
+}
+
+.mdl-layout__tab-bar {
+	max-height: 48px !important;
+}
+
+.mdl-list__item {
+	min-height: 56px;
+}
+
+.mdl-list__item.notop {
+	padding-top: 0px !important;
+	min-height: 30px !important;
+}
+
+.mdl-list__item.nobottom {
+	padding-bottom: 0px !important;
+}
+
+.mdl-list__item-primary-content-left {
+	min-width: 54px !important;
+	max-width: 54px !important;
+	font-weight: normal;
+}
+
+.mdl-list__item-text-body {
+	font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 18px;
+    color: rgba(0,0,0,.54);
+}
+
+.mdl-grid.center-items {
+  justify-content: center;
+}
+
+.date {
+	border-bottom: solid 1px #e5e5e5;
+	padding: 0;
+}
+
+.date-arrow {
+	cursor: pointer;
+}
+
+.mdl-list__item-primary-content-left.recipe {
+	min-width: 100px !important;
+	max-width: 100px !important;
+}
+
+.mdl-textfield.recipessearch {
+	width: 100%;
+}

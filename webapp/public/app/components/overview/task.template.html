@@ -1,0 +1,15 @@
+<div ng-repeat="task in tasks">
+    <li class="mdl-list__item" style="background-color:{{ getColor(task.colour) }}">
+        <span class="mdl-list__item-primary-content">
+            <span class="mdl-list__item-primary-content-left">
+                {{ getHour(task.timeMin) }} &nbsp;&nbsp;&nbsp;to {{ getHour(task.timeMax) }}
+            </span>
+            <span>{{ getTaskTitle(task.description) }}</span>&nbsp;<span ng-if="task.location">({{ task.location }})</span>
+        </span>
+        <span class="mdl-list__item-secondary-action" ng-if="!task.colour">
+            <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" ng-click="removeTask(task.id)">
+                <i class="material-icons">clear</i>
+            </button>
+        </span>
+    </li>
+</div>

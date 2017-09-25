@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>TPot Student</title>
+
+        <!-- INCLUDE FAVICONS -->
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icon32.png">
+
+        <!-- INCLUDE JAVASCRIPT LIBRARIES -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="https://code.angularjs.org/1.4.8/angular-route.js"></script>
+        <script src="assets/lib/angular-ui-router.js"></script>
+        <script src="https://code.angularjs.org/1.4.8/angular-cookies.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="assets/lib/google-plus-signin.js"></script>
+        <meta name="google-signin-client_id" content="264007239616-gv1ib14d9qdju864gbp529249mm62ucq.apps.googleusercontent.com">
+
+        <!-- INCLUDE CHARTS LIBRARY -->
+        <script src="assets/lib/chart.min.js"></script>
+        <script src="assets/lib/angular-chart.min.js"></script>
+
+        <!-- INCLUDE GEOLOCATION LIBRARY -->
+        <script src="assets/lib/material.min.js"></script>
+        <script src="assets/lib/angular-material-design-lite.js"></script>
+
+        <!-- INCLUDE MDL LIBRARY -->
+        <script src="assets/lib/geolocation.min.js"></script>
+
+        <!-- INCLUDE APP.JS -->
+        <script src="app/app.js"></script>
+
+        <!-- INCLUDE SERVICES -->
+        <script src="app/services/user.service.js"></script>
+        <script src="app/services/societies.service.js"></script>
+
+        <!-- INCLUDE CONTROLLERS -->
+        <script src="app/components/home/login/login.controller.js"></script>
+        <script src="app/components/home/whatistpot/whatistpot.controller.js"></script>
+        <script src="app/components/home/welcome/welcome.controller.js"></script>
+        <script src="app/components/overview/overview.controller.js"></script>
+        <script src="app/components/overview/add/overviewadd.controller.js"></script>
+        <script src="app/components/overview/edit/overviewedit.controller.js"></script>
+        <script src="app/components/recipes/recipes.controller.js"></script>
+        <script src="app/components/recipes/search/recipessearch.controller.js"></script>
+        <script src="app/components/recipes/assign/recipesassign.controller.js"></script>
+        <script src="app/components/recipes/details/recipesdetails.controller.js"></script>
+        <script src="app/components/recipes/shoppinglist/recipesshoppinglist.controller.js"></script>
+        <script src="app/components/recipes/specialoffers/recipesspecialoffers.controller.js"></script>
+        <script src="app/components/recipes/specialoffer/recipesspecialoffer.controller.js"></script>
+        <script src="app/components/finances/finances.controller.js"></script>
+        <script src="app/components/finances/day/financesday.controller.js"></script>
+        <script src="app/components/finances/add/financesadd.controller.js"></script>
+        <script src="app/components/finances/edit/financesedit.controller.js"></script>
+        <script src="app/components/settings/settings.controller.js"></script>
+        <script src="app/components/settings/addsocieties/settingsaddsocieties.controller.js"></script>
+        <script src="app/components/societies/societies.controller.js"></script>
+        <script src="app/components/societies/login/societieslogin.controller.js"></script>
+        <script src="app/components/societies/add/societiesadd.controller.js"></script>
+        <script src="app/components/transport/transport.controller.js"></script>
+
+        <!-- SET DISPLAY MODE TO MOBILE -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="mobile-web-app-capable" content="yes">
+
+        <!-- INCLUDE GOOGLE'S MATERIAL DESIGN LIBRARIES -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+        <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+
+        <!-- INCLUDE DROPDOWN CSS AND JS -->
+        <link rel="stylesheet" href="assets/css/dropdown.css">
+        <script defer src="assets/lib/dropdown.js"></script>
+
+        <!-- INCLUDE JS DATE FORMATTING LIBRARY -->
+        <script defer src="assets/lib/moment.js"></script>
+
+        <!-- INCLUDE STYLESHEET -->
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+        <script>
+            function start() {
+                gapi.load('auth2', function() {
+                    auth2 = gapi.auth2.init({
+                        client_id: '264007239616-gv1ib14d9qdju864gbp529249mm62ucq.apps.googleusercontent.com'
+                    });
+                });
+            }
+            function signIn() {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.grantOfflineAccess({'redirect_uri': 'postmessage', 'scope': 'profile email OpenID https://www.googleapis.com/auth/calendar',}).then(function(res) {
+                    var cu = auth2.currentUser.get();
+                    var response_token = res;
+                    var auth_response = cu.getAuthResponse();
+                    var profile = cu.getBasicProfile();
+                    console.log('auth_response: ' + JSON.stringify(auth_response));
+
+                    var elem = angular.element(document.querySelector('[ng-controller]'));
+                    var injector = elem.injector();
+                    var myService = injector.get('UserService');
+                    myService.login(response_token, auth_response, profile);
+                    elem.scope().$apply();
+                });
+            }
+            function signOut() {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                    console.log('User signed out.');
+                });
+            }
+        </script>
+        <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
+    </head>
+    <body ng-app="app" ng-controller="MainController">
+        <div id="container">
+            <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+                <div class="mdl-layout__drawer">
+                    <span class="mdl-layout-title">TPot Student</span>
+                    <nav class="mdl-navigation">
+                        <a class="mdl-navigation__link" href="/">Home</a>
+                        <a class="mdl-navigation__link" href="/#/settings">Settings</a>
+                        <a class="mdl-navigation__link" href="app-debug.apk">Download Android App</a>
+                        <a class="mdl-navigation__link" ng-click="logout()">Logout</a>
+                    </nav>
+                </div>
+                <header class="mdl-layout__header" ng-class="navigation">
+                    <div class="mdl-layout__header-row">
+                        <span class="mdl-layout-title">TPot Student</span>
+                    </div>
+                    <div class="mdl-layout__tab-bar mdl-js-ripple-effect" ng-class="tabs">
+                        <a href="/#/" class="mdl-layout__tab" ng-class="tabs_overview">Overview</a>
+                        <a href="/#/recipes" class="mdl-layout__tab" ng-class="tabs_recipes">Recipes</a>
+                        <a href="/#/finances" class="mdl-layout__tab" ng-class="tabs_finances">Finances</a>
+                        <a href="/#/transport" class="mdl-layout__tab" ng-class="tabs_transport">Transport</a>
+                    </div>
+                </header>
+                <main class="mdl-layout__content">
+                    <div class="page-content" ui-view="page"></div>
+                </main>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

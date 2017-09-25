@@ -1,0 +1,11 @@
+<li class="mdl-list__item" ng-repeat="item in shoppinglist">
+    <span class="mdl-list__item-primary-content">
+    <i class="material-icons mdl-list__item-icon">sort</i>
+    	{{ item.name }}
+    </span>
+    <span class="mdl-list__item-secondary-action">
+		<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-{{ item.id }}">
+            <input type="checkbox" id="checkbox-{{ item.id }}" class="mdl-checkbox__input">
+        </label>
+	</span>
+</li>

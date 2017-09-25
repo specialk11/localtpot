@@ -1,0 +1,22 @@
+<ul class="demo-list-icon mdl-list" ng-model="specialoffers">
+	<li class="mdl-list__item" ng-repeat="specialoffer in specialoffers">
+	    <span class="mdl-list__item-primary-content">
+	        <img width="48px" height="48px" src="{{ specialoffer.img }}" style="margin-right:10px;">
+	    	<b>{{ specialoffer.store }}:</b>&nbsp;{{ specialoffer.name }}
+	    </span>
+	    <span class="mdl-list__item-secondary-action">
+	    	{{ specialoffer.price }}
+		</span>
+	</li>
+</ul>
+<div class="mdl-grid">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--4-col mdl-typography--text-center">
+    	<a href="/#/recipes/specialoffers">
+	    	<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+			  	View Categories
+			</button>
+		</a>
+    </div>
+    <div class="mdl-layout-spacer"></div>
+</div>

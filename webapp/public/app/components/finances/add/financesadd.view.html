@@ -1,0 +1,38 @@
+<ul class="mdl-list" ng-model="weekbalance">
+	<li class="mdl-list__item">
+	    <span class="mdl-list__item-primary-content">
+	        <b>Add {{ which }}</b>
+	    </span>
+	</li>
+	<li class="mdl-list__item">
+	    <span class="mdl-list__item-primary-content">
+			<form action="#">
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<input class="mdl-textfield__input" type="text" id="details" ng-model="details">
+					<label class="mdl-textfield__label" for="details">Details...</label>
+				</div>
+			</form>
+	    </span>
+	</li>
+	<li class="mdl-list__item">
+	    <span class="mdl-list__item-primary-content">
+			<form action="#">
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="amount" ng-model="amount">
+					<label class="mdl-textfield__label" for="amount">Amount...</label>
+				<span class="mdl-textfield__error">Input is not a number!</span>
+				</div>
+			</form>
+	    </span>
+	</li>
+	<li class="mdl-list__item">
+	    <span class="mdl-list__item-primary-content">
+	        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" ng-if="which=='Income'" ng-click="add()">
+			  	Add Income
+			</button>
+			<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" ng-if="which=='Expenditure'" ng-click="add()">
+			  	Add Expenditure
+			</button>
+	    </span>
+	</li>
+</ul>

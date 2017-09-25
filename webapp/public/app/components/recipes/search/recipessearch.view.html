@@ -1,0 +1,25 @@
+<div class="mdl-grid">
+	<div class="mdl-cell mdl-cell--12-col date-arrow">
+		<form action="#">
+		  	<div class="mdl-textfield mdl-js-textfield recipessearch">
+		    	<input class="mdl-textfield__input" type="text" id="recipessearchtextfieldid" ng-model="recipessearchtextfield" ng-change="loadRecipesSearch(recipessearchtextfield)">
+		    	<label class="mdl-textfield__label" for="recipessearchtextfieldid">Search for recipe..</label>
+		  	</div>
+		</form>
+	</div>
+</div>
+<ul class="demo-list-icon mdl-list" ng-model="recipessearch">
+	<li class="mdl-list__item" ng-repeat="recipe in recipessearch">
+	    <span class="mdl-list__item-primary-content">
+	        <img width="48px" height="48px" src="http://spoonacular.com/recipeImages/{{ recipe.image }}" style="margin-right:10px;">
+	    	{{ recipe.title }}
+	    </span>
+	    <span class="mdl-list__item-secondary-action">
+	    	<a href="/#/recipes/assign/{{ recipe.id }}/{{ date }}/{{ meal }}">
+				<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+				  	<i class="material-icons">add circle</i>
+				</button>
+			</a>
+		</span>
+	</li>
+</ul>

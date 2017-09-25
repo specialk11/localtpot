@@ -1,0 +1,115 @@
+<div class="mdl-grid date">
+	<div class="mdl-cell mdl-cell--1-col date-arrow" ng-click="changeDate(-1)">
+		<div class="mdl-grid center-items">
+			<
+		</div>
+	</div>
+	<div class="mdl-cell mdl-cell--10-col mdl-cell--6-col-tablet mdl-cell--2-col-phone">
+		<div class="mdl-grid center-items">
+			{{datename}}
+		</div>
+	</div>
+	<div class="mdl-cell mdl-cell--1-col date-arrow" ng-click="changeDate(1)">
+		<div class="mdl-grid center-items">
+			>
+		</div>
+	</div>
+</div>
+<ul class="mdl-list" ng-model="recipes">
+	<li class="mdl-list__item">
+	    <span class="mdl-list__item-primary-content">
+	        <span class="mdl-list__item-primary-content-left recipe">
+	            Breakfast
+	        </span>
+	        <span ng-if="recipe.breakfast">
+	        	<img width="48px" height="48px" src="{{ recipe.breakfast.image }}" style="margin-right:10px;">
+	        	<a href="/#/recipes/details/{{ recipe.breakfast.id }}">{{ recipe.breakfast.title }}</a>
+	    	</span>
+	    </span>
+	    <span class="mdl-list__item-secondary-action">
+			<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" ng-if="recipe.breakfast" ng-click="unassignRecipe()">
+			  	<i class="material-icons">clear</i>
+			</button>
+			<a ng-href="/#/recipes/search/{{ day }}/breakfast" ng-if="!recipe.breakfast">
+				<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+				  	<i class="material-icons">add</i>
+				</button>
+			</a>
+	    </span>
+	</li>
+	<li class="mdl-list__item">
+	    <span class="mdl-list__item-primary-content">
+	        <span class="mdl-list__item-primary-content-left recipe">
+	            Lunch
+	        </span>
+	        <span ng-if="recipe.lunch">
+	        	<img width="48px" height="48px" src="{{ recipe.lunch.image }}" style="margin-right:10px;">
+	        	<a href="/#/recipes/details/{{ recipe.lunch.id }}">{{ recipe.lunch.title }}</a>
+	    	</span>
+	    </span>
+	    <span class="mdl-list__item-secondary-action">
+			<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" ng-if="recipe.lunch" ng-click="unassignRecipe()">
+			  	<i class="material-icons">clear</i>
+			</button>
+			<a ng-href="/#/recipes/search/{{ day }}/lunch" ng-if="!recipe.lunch">
+				<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+				  	<i class="material-icons">add</i>
+				</button>
+			</a>
+	    </span>
+	</li>
+	<li class="mdl-list__item">
+	    <span class="mdl-list__item-primary-content">
+	        <span class="mdl-list__item-primary-content-left recipe">
+	            Dinner
+	        </span>
+	        <span ng-if="recipe.dinner">
+	        	<img width="48px" height="48px" src="{{ recipe.dinner.image }}" style="margin-right:10px;">
+	        	<a href="/#/recipes/details/{{ recipe.dinner.id }}">{{ recipe.dinner.title }}</a>
+	    	</span>
+	    </span>
+	    <span class="mdl-list__item-secondary-action">
+			<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" ng-if="recipe.dinner" ng-click="unassignRecipe()">
+			  	<i class="material-icons">clear</i>
+			</button>
+			<a ng-href="/#/recipes/search/{{ day }}/dinner" ng-if="!recipe.dinner">
+				<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+				  	<i class="material-icons">add</i>
+				</button>
+			</a>
+	    </span>
+	</li>
+	<li class="mdl-list__item">
+	    <span class="mdl-list__item-primary-content">
+	        <span class="mdl-list__item-primary-content-left recipe">
+	            Snacks
+	        </span>
+	        <span ng-if="recipe.snack">
+	        	<img width="48px" height="48px" src="{{ recipe.snack.image }}" style="margin-right:10px;">
+	        	<a href="/#/recipes/details/{{ recipe.snack.id }}">{{ recipe.snack.title }}</a>
+	    	</span>
+	    </span>
+	    <span class="mdl-list__item-secondary-action">
+			<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" ng-if="recipe.snack" ng-click="unassignRecipe()">
+			  	<i class="material-icons">clear</i>
+			</button>
+			<a ng-href="/#/recipes/search/{{ day }}/snack" ng-if="!recipe.snack">
+				<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+				  	<i class="material-icons">add</i>
+				</button>
+			</a>
+	    </span>
+	</li>
+</ul>
+
+<div class="mdl-grid">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--4-col mdl-typography--text-center">
+    	<a href="/#/recipes/specialoffers">
+	    	<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+			  	Special Offers
+			</button>
+		</a>
+    </div>
+    <div class="mdl-layout-spacer"></div>
+</div>

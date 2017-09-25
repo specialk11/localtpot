@@ -1,0 +1,64 @@
+<div class="mdl-grid date">
+	<div class="mdl-cell mdl-cell--1-col date-arrow" ng-click="changeDate(-14)">
+		<div class="mdl-grid center-items">
+			<
+		</div>
+	</div>
+	<div class="mdl-cell mdl-cell--10-col mdl-cell--6-col-tablet mdl-cell--2-col-phone">
+		<div class="mdl-grid center-items">
+			{{ datename }}
+		</div>
+	</div>
+	<div class="mdl-cell mdl-cell--1-col date-arrow" ng-click="changeDate(0)">
+		<div class="mdl-grid center-items">
+			>
+		</div>
+	</div>
+</div>
+<ul class="mdl-list" ng-model="weekbalance">
+	<li class="mdl-list__item">
+	    <span class="mdl-list__item-primary-content">
+	        Income
+	    </span>
+	    <span class="mdl-list__item-secondary-action">
+			&euro;{{ income }}
+	    </span>
+	</li>
+	<li class="mdl-list__item">
+	    <span class="mdl-list__item-primary-content">
+	        Expenditure
+	    </span>
+	    <span class="mdl-list__item-secondary-action">
+			&euro;{{ expenditure }}
+	    </span>
+	</li>
+	<li class="mdl-list__item">
+	    <span class="mdl-list__item-primary-content">
+	        <b>Balance</b>
+	    </span>
+	    <span class="mdl-list__item-secondary-action">
+			<b>&euro;{{ balance }}</b>
+	    </span>
+	</li>
+</ul>
+
+<div class="mdl-grid">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--10-col mdl-typography--text-center">
+    	<canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick"></canvas>
+    </div>
+    <div class="mdl-layout-spacer"></div>
+</div>
+
+<div class="mdl-grid">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--4-col mdl-typography--text-center">
+    	<a href="/#/finances/day/{{ day }}">
+	    	<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+			  	View Week
+			</button>
+		</a>
+    </div>
+    <div class="mdl-layout-spacer"></div>
+</div>
+

@@ -1,0 +1,64 @@
+<ul class="mdl-list" ng-model="weekbalance">
+	<li class="mdl-list__item">
+	    <span class="mdl-list__item-primary-content">
+	        <b>Add task</b>
+	    </span>
+	</li>
+	<li class="mdl-list__item">
+	    <span class="mdl-list__item-primary-content">
+			<form action="#">
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<input class="mdl-textfield__input" type="text" id="summary" ng-model="new">
+					<label class="mdl-textfield__label" for="summary">Summary...</label>
+				</div>
+			</form>
+	    </span>
+	</li>
+	<li class="mdl-list__item">
+	    <span class="mdl-list__item-primary-content">
+			<form action="#">
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<input class="mdl-textfield__input" type="text" id="description" ng-model="newdescription">
+					<label class="mdl-textfield__label" for="description">Description...</label>
+				</div>
+			</form>
+	    </span>
+	</li>
+	<li class="mdl-list__item">
+	    <span class="mdl-list__item-primary-content">
+			<form action="#">
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<input class="mdl-textfield__input" type="text" id="location" ng-model="newlocation">
+					<label class="mdl-textfield__label" for="location">Location...</label>
+				</div>
+			</form>
+	    </span>
+	</li>
+	<li class="mdl-list__item">
+	    <span class="mdl-list__item-primary-content">
+	    	<form action="#">
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<input class="mdl-textfield__input" value="13:00" type="text" id="timestart" ng-model="newtimestart">
+					<label class="mdl-textfield__label" for="timestart">Time start...</label>
+				</div>
+			</form>
+	    </span>
+	</li>
+	<li class="mdl-list__item">
+	    <span class="mdl-list__item-primary-content">
+			<form action="#">
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<input class="mdl-textfield__input" value="14:00" type="text" id="timeend" ng-model="newtimeend">
+					<label class="mdl-textfield__label" for="timeend">Time End...</label>
+				</div>
+			</form>
+		</span>
+	</li>
+	<li class="mdl-list__item">
+	    <span class="mdl-list__item-primary-content">
+	        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" ng-click="add()">
+			  	Add Task
+			</button>
+	    </span>
+	</li>
+</ul>

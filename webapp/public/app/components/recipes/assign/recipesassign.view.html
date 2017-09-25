@@ -1,0 +1,57 @@
+<ul class="mdl-list">
+	<li class="mdl-list__item">
+	    <span class="mdl-list__item-primary-content">
+	        <img width="48px" height="48px" src="{{ image }}" style="margin-right:10px;">
+	    	{{ title }}
+	    </span>
+	</li>
+	<li class="mdl-list__item nobottom">
+	    <span class="mdl-list__item-primary-content">
+	    	<span>
+	    		<b>Instructions</b>
+	    	</span>
+	    </span>
+	</li>
+	<li class="mdl-list__item notop">
+	    <span class="mdl-list__item-primary-content">
+	    	<span class="mdl-list__item-text-body">
+	    		{{ instructions }}
+	    	</span>
+	    </span>
+	</li>
+	<li class="mdl-list__item nobottom">
+	    <span class="mdl-list__item-primary-content">
+	    	<span>
+	    		<b>Ingredients</b>
+	    	</span>
+	   	</span>
+	</li>
+	<li class="mdl-list__item nobottom notop">
+	    <span class="mdl-list__item-primary-content">
+	    	<span class="mdl-list__item-text-body">
+	    		Select the ones you have and the rest will be added to your shopping list.
+	    	</span>
+	   	</span>
+	</li>
+</ul>
+<ul class="demo-list-icon mdl-list" ng-model="ingredients">
+	<li class="mdl-list__item" ng-repeat="ingredient in ingredients">
+	    <span class="mdl-list__item-primary-content">
+	    	<img width="48px" height="48px" src="{{ ingredient.image }}" style="margin-right:10px;">
+	    	{{ ingredient.originalString }}
+	    </span>
+	    <span class="mdl-list__item-secondary-action">
+
+		</span>
+	</li>
+</ul>
+
+<div class="mdl-grid">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--4-col mdl-typography--text-center">
+    	<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" ng-click="assignRecipe()">
+		  	Assign Recipe
+		</button>
+	</div>
+    <div class="mdl-layout-spacer"></div>
+</div>
